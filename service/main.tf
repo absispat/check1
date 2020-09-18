@@ -10,7 +10,7 @@ resource "google_compute_instance" "vm_instance" {
 
   boot_disk {
     initialize_params {
-      image = "service1-ovo-test"
+      image = var.image
     }
   }
 
@@ -25,6 +25,6 @@ resource "google_compute_instance" "vm_instance" {
 terraform {
   backend "gcs" {
     bucket = "ovoterraformtest"
-    prefix  = "service2/dev"
+    prefix  = "service"
   }
 }
