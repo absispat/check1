@@ -5,7 +5,7 @@ provider "google" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instanceovo-service1-dev"
+  name         = "terraform-instanceovo-service1-${var.env}"
   machine_type = "f1-micro"
 
   boot_disk {
@@ -21,7 +21,6 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
-
 
 terraform {
   backend "gcs" {
