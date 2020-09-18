@@ -25,6 +25,6 @@ resource "google_compute_instance" "vm_instance" {
 terraform {
   backend "gcs" {
     bucket = "ovoterraformtest"
-    prefix  = "service-"
+    prefix  = "service"
   }
 }
